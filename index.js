@@ -24,7 +24,7 @@ app.use('/api', policyRoutes);
 app.use('/api', claimRoutes);
 
 // Start the server
-const port = 4000;
+const port = 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
