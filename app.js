@@ -4,13 +4,14 @@ const bodyParser = require('body-parser');
 const userRoutes = require('./routes/userRoutes');
 const policyRoutes = require('./routes/policyRoutes');
 const claimRoutes = require('./routes/claimRoutes');
+require("dotenv").config();
 
 const app = express();
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-const uri = "mongodb+srv://parvej0ali:Hy2A6bLzhE7kPmRS@cluster0.aijfsfk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-mongoose.connect(uri);
+
+mongoose.connect(process.env.uri);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
