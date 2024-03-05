@@ -19,6 +19,9 @@ db.once('open', () => {
 });
 
 // Use routes
+app.get('/', (req, res) => {
+  res.send("hello");
+})
 app.use('/api', userRoutes);
 app.use('/api', policyRoutes);
 app.use('/api', claimRoutes);
